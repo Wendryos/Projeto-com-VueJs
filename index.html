@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title> Curso VueJs 3 </title>
+</head>
+
+<body>
+    <div id="app">
+        <h1> Curso VueJs 3</h1>
+
+        <p> Nome: {{ name }} </p>
+        <p> Sobrenome: {{ lastname }} </p>
+        <p> Idade: {{ age }} anos </p>
+        <div class="__image__">
+            <img :src="product.image" :alt="product.title">
+            <div class="__imagefooter__">
+                {{ product.title }}
+                <br>
+                <div class="text-lean" v-if="product.likes > 0"> Curtidas: {{ product.likes }} </div>
+            </div>
+        </div>
+
+        <div class="__image__">
+            <img :src="product2.image" :alt="product2.title">
+            <div class="__imagefooter__">
+                {{ product2.title }}
+                <br>
+                <div class="text-lean" v-if="product2.likes > 0"> Curtidas: {{ product2.likes }} </div>
+            </div>
+
+        </div>
+
+        <div class="__image__">
+            <img :src="product3.image" :alt="product3.title">
+            <div class="__imagefooter__">
+                {{ product3.title }}
+                <br>
+                <div class="text-lean" v-if="product3.likes > 0"> Curtidas: {{ product3.likes }} </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <style>
+        .__image__ {
+            width: 300px;
+            height: 300px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, .3);
+            padding: 20px;
+            padding-bottom: 60px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+        }
+        
+        .__image__ img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 2px;
+            filter: grayscale(40%) contrast(80%);
+            transition: all ease-in 400ms;
+            cursor: pointer;
+        }
+        
+        .__image__ img:hover {
+            filter: grayscale(0%) contrast(105%);
+        }
+        
+        .__imagefooter__ {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            padding-top: 8px;
+            padding-bottom: 7px;
+        }
+        
+        .text-lean {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: dimgrey;
+        }
+    </style>
+</body>
+
+</html>
